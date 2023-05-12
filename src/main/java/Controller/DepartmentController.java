@@ -5,6 +5,7 @@ import java.util.List;
 //import javax.validation.Valid;
 // Importing required classes
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
  
 //Annotation
@@ -19,7 +20,8 @@ public class DepartmentController {
  // Save operation
  @PostMapping("/departments")
  public Department saveDepartment(
-     @Valid @RequestBody Department department)
+     @Validated
+     @RequestBody Department department)
  {
      return departmentService.saveDepartment(department);
  }
